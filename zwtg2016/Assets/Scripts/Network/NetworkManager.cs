@@ -9,13 +9,14 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject spawnPoint;
 	public GameObject prefab;
 
+
 	void Start () {
 		PhotonNetwork.ConnectUsingSettings(VERSION);
 	}
 
 
 	void OnJoinedLobby() {
-		RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 4 };
+		RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 20 };
 
 		// NOT THREAD SAFE!!
 		PhotonNetwork.JoinOrCreateRoom(ROOM_NAME, roomOptions, TypedLobby.Default);

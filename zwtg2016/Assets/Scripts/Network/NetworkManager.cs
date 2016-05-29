@@ -11,6 +11,8 @@ public class NetworkManager : MonoBehaviour {
 
 
 	void Start () {
+		PhotonNetwork.offlineMode = true;
+
 		PhotonNetwork.ConnectUsingSettings(VERSION);
 	}
 
@@ -24,5 +26,7 @@ public class NetworkManager : MonoBehaviour {
 
 	void OnJoinedRoom() {
 		PhotonNetwork.Instantiate(prefab.name, spawnPoint.transform.position, spawnPoint.transform.rotation, 0);
+
+		PhotonNetwork.player.SetTeam (PunTeams.Team.psycho);
 	}
 }

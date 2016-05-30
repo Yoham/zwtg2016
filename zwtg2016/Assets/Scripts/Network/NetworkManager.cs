@@ -11,8 +11,6 @@ public class NetworkManager : MonoBehaviour {
 
 
 	void Start () {
-		PhotonNetwork.offlineMode = true;
-
 		PhotonNetwork.ConnectUsingSettings(VERSION);
 	}
 

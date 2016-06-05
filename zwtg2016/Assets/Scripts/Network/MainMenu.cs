@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour {
 
 
 	void OnGUI() {
-//		Debug.Log ("OnGUI Menu");
+		Debug.Log ("OnGUI Menu");
 
 		if (!PhotonNetwork.connected) {
 			Debug.Log ("Wait for a connection");

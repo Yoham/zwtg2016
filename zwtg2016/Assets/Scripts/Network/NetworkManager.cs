@@ -9,7 +9,6 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject spawnPoint;
 	public GameObject prefab;
 
-
 	void Awake () {
 		Debug.Log ("Awake");
 //		PhotonNetwork.offlineMode = true;
@@ -38,7 +37,7 @@ public class NetworkManager : MonoBehaviour {
 
 	void OnGUI()
 	{
-//		Debug.Log ("OnGUI");
+		Debug.Log ("OnGUI");
 		if (PhotonNetwork.room == null) return; //Only display this GUI when inside a room
 
 		if (GUILayout.Button("Leave Room"))

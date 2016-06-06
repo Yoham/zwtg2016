@@ -20,6 +20,7 @@ public class NetworkManager : MonoBehaviour {
 
 	}
 		
+
 	void OnJoinedLobby() {
 		Debug.Log ("OnJoinedLobby");
 		

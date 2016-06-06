@@ -117,6 +117,7 @@
      <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
      <Compile Include="Assets\Scripts\Core\ConditionalScript.cs" />
      <Compile Include="Assets\Scripts\Core\HideWall.cs" />
+     <Compile Include="Assets\Scripts\Core\ThirdPersonUserControl.cs" />
      <Compile Include="Assets\Scripts\Network\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Network\NetworkManager.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />

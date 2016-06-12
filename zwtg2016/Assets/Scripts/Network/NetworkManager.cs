@@ -23,14 +23,13 @@ public class NetworkManager : MonoBehaviour {
 
 	void OnJoinedLobby() {
 		Debug.Log ("OnJoinedLobby");
-		
-		RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 20 };
-
-		// NOT THREAD SAFE!!
-//		PhotonNetwork.JoinOrCreateRoom(ROOM_NAME, roomOptions, TypedLobby.Default);
 	}
 
 	void OnJoinedRoom() {
+
+		Debug.Log ("Working?");
+		Debug.Log (prefab.name);
+
 		PhotonNetwork.Instantiate(prefab.name, spawnPoint.transform.position, spawnPoint.transform.rotation, 0);
 
 		PhotonNetwork.player.SetTeam (PunTeams.Team.psycho);

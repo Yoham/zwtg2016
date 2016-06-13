@@ -8,8 +8,11 @@ public class NetworkManager : MonoBehaviour {
 
 	public GameObject spawnPoint;
 	public GameObject prefab;
+    public GameObject standbyCamera;
 
-	void Awake () {
+    public float respawnTimer = 0f;
+
+    void Awake () {
 		Debug.Log ("Awake");
 //		PhotonNetwork.offlineMode = true;
 		if (!PhotonNetwork.connected) {
@@ -37,7 +40,7 @@ public class NetworkManager : MonoBehaviour {
 
 	void OnGUI()
 	{
-		Debug.Log ("OnGUI");
+		//Debug.Log ("OnGUI");
 		if (PhotonNetwork.room == null) return; //Only display this GUI when inside a room
 
 		if (GUILayout.Button("Leave Room"))
@@ -45,6 +48,21 @@ public class NetworkManager : MonoBehaviour {
 			PhotonNetwork.LeaveRoom();
 		}
 	}
+
+    void Update()
+    {
+        if (respawnTimer > 0)
+        {
+            respawnTimer -= Time.deltaTime;
+
+            if (respawnTimer <= 0)
+            {
+                standbyCamera.SetActive(false);
+                PhotonNetwork.Instantiate(prefab.name, spawnPoint.transform.position, spawnPoint.transform.rotation, 0);
+                PhotonNetwork.player.SetTeam(PunTeams.Team.psycho);
+            }
+        }
+    }
 
 
 

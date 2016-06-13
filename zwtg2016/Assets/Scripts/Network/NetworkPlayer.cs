@@ -14,9 +14,10 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 		if (photonView.isMine) {
 
 			GetComponent<FirstPersonController> ().enabled = true;
-			//GetComponent<HeadBob> ().enabled = true;
+            GetComponent<Shooting>().enabled = true;
+            //GetComponent<HeadBob> ().enabled = true;
 
-			foreach (Camera cam in GetComponentsInChildren<Camera>()) {
+            foreach (Camera cam in GetComponentsInChildren<Camera>()) {
 				cam.enabled = true;
 			}
 

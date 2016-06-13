@@ -30,4 +30,6 @@ MonoBehaviour:
   - PunPickupSimple
   - PunRespawn
   - RequestForPickupTimes
+  - TakeDamage
+  - SniperBulletFX
   DisableAutoOpenWizard: 1

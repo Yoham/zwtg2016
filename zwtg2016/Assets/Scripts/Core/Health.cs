@@ -29,6 +29,7 @@ public class Health : MonoBehaviour
         {
             if(GUI.Button(new Rect(Screen.width-100, 0, 100, 40), "Kill Meh"))
             {
+               // Debug.Log("BUTTON");
                 Die();
             }
         }
@@ -36,16 +37,19 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("DIE");
+       // Debug.Log("DIE");
         if (GetComponent<PhotonView>().instantiationId == 0)
         {
             Destroy(gameObject);
         }
         else {
+           // Debug.Log("Die Else");
             if (GetComponent<PhotonView>().isMine)
             {
+                //Debug.Log("MINE");
                 if (gameObject.tag == "Player")
                 {
+                    //Debug.Log("Player");
                     NetworkManager nm = GameObject.FindObjectOfType<NetworkManager>();
 
                     nm.standbyCamera.SetActive(true);

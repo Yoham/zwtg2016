@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 416760}
   - 120: {fileID: 12056262}
-  - 114: {fileID: 11455368}
+  - 114: {fileID: 11419780}
   m_Layer: 0
   m_Name: LineFX
   m_TagString: Untagged
@@ -42,8 +42,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 437502}
-  - 114: {fileID: 11442290}
   - 82: {fileID: 8252720}
+  - 114: {fileID: 11481808}
   m_Layer: 0
   m_Name: SniperBulletFX
   m_TagString: Untagged
@@ -163,19 +163,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &11442290
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3278ea92b90e53b40b822ec91bda5f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selfDestructTime: 0.5
---- !u!114 &11455368
+--- !u!114 &11419780
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -183,7 +171,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 129482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3278ea92b90e53b40b822ec91bda5f22, type: 3}
+  m_Script: {fileID: 11500000, guid: ca3faa59d2390594d86af9dd991c3949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfDestructTime: 1
+--- !u!114 &11481808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3faa59d2390594d86af9dd991c3949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   selfDestructTime: 1

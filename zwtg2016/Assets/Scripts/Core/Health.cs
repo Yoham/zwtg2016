@@ -23,19 +23,38 @@ public class Health : MonoBehaviour
         }
     }
 
+     void OnGUI()
+    {
+        if(GetComponent<PhotonView>().isMine && gameObject.tag == "Player")
+        {
+            if(GUI.Button(new Rect(Screen.width-100, 0, 100, 40), "Kill Meh"))
+            {
+                Die();
+            }
+        }
+    } 
+
     void Die()
     {
+        Debug.Log("DIE");
         if (GetComponent<PhotonView>().instantiationId == 0)
         {
             Destroy(gameObject);
         }
         else {
-            if (PhotonNetwork.isMasterClient)
+            if (GetComponent<PhotonView>().isMine)
             {
+                if (gameObject.tag == "Player")
+                {
+                    NetworkManager nm = GameObject.FindObjectOfType<NetworkManager>();
+
+                    nm.standbyCamera.SetActive(true);
+                    nm.respawnTimer = 3f;
+                }
+
                 PhotonNetwork.Destroy(gameObject);
             }
         }
     }
 
 }
-

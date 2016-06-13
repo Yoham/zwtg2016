@@ -15,10 +15,10 @@ GameObject:
   - 114: {fileID: 11409614}
   - 114: {fileID: 11468062}
   - 23: {fileID: 2373278}
-  - 136: {fileID: 13610146}
   - 33: {fileID: 3396806}
   - 114: {fileID: 11444638}
   - 114: {fileID: 11422576}
+  - 136: {fileID: 13664950}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Player
@@ -51,7 +51,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 140.7, y: 12.8, z: -46.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.8, z: 0.5}
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 0}
@@ -63,7 +63,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -250,8 +250,8 @@ MonoBehaviour:
   m_StickToGroundForce: 10
   m_GravityMultiplier: 2
   m_MouseLook:
-    XSensitivity: 2
-    YSensitivity: 2
+    XSensitivity: 3
+    YSensitivity: 3
     clampVerticalRotation: 1
     MinimumX: -90
     MaximumX: 90
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a655ac3f9c94b2485758eb02bef466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &13610146
+--- !u!136 &13664950
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -396,8 +396,8 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 0.7
+  m_Radius: 0.7
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &14300000

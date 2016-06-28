@@ -305,6 +305,7 @@ MonoBehaviour:
   m_sendMessage: {fileID: 376757571}
   m_incommingBox: {fileID: 816878461}
   m_messagePrefab: {fileID: 176450, guid: fb2bd688e23a4ac47822d36fb21563b7, type: 2}
+  toggleKey: 13
 --- !u!1 &165914657
 GameObject:
   m_ObjectHideFlags: 0

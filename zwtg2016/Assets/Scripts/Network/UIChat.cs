@@ -25,7 +25,7 @@ namespace UI
             m_chatClient.ChatRegion = "EU";
 
             m_authenticationValues = new ExitGames.Client.Photon.Chat.AuthenticationValues();
-            m_authenticationValues.UserId = "Test";
+            m_authenticationValues.UserId = System.Environment.UserName;
             m_authenticationValues.AuthType = ExitGames.Client.Photon.Chat.CustomAuthenticationType.None;
             m_chatClient.Connect(m_appId, "0.01", m_authenticationValues);
         }
@@ -60,7 +60,7 @@ namespace UI
                 string l_inputFromTextField = m_messageInput.text;
                 m_messageInput.text = "";
                 m_chatClient.PublishMessage("channelNameHere", l_inputFromTextField);
-                GenerateTextBox(l_inputFromTextField);
+                
             }
         }
 
@@ -105,7 +105,7 @@ namespace UI
 
                 print(sender + ": " + msg);
 
-                m_messagePrefab.GetComponentInChildren(typeof(Text)).GetComponent<Text>().text = sender + ": " + msg;
+                GenerateTextBox(sender + ": " + msg);
             }
         }
 

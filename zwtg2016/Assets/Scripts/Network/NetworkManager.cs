@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UI;
 
 public class NetworkManager : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject spawnPoint;
 	public GameObject prefab;
     public GameObject standbyCamera;
+
+    public UIChat m_chat;
 
     public float respawnTimer = 0f;
 
@@ -20,8 +23,9 @@ public class NetworkManager : MonoBehaviour {
 		}
 
 		PhotonNetwork.playerName = PlayerPrefs.GetString("playerName", "Guest" + Random.Range(1, 9999));
+        
 
-	}
+    }
 		
 
 	void OnJoinedLobby() {
@@ -34,7 +38,7 @@ public class NetworkManager : MonoBehaviour {
 		Debug.Log (prefab.name);
 
 		PhotonNetwork.Instantiate(prefab.name, spawnPoint.transform.position, spawnPoint.transform.rotation, 0);
-
+        m_chat.Authenticate(PhotonNetwork.playerName);
 		PhotonNetwork.player.SetTeam (PunTeams.Team.psycho);
 	}
 

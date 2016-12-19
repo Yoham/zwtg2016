@@ -12,7 +12,7 @@ namespace UI
         public InputField m_messageInput;
         public Button m_sendMessage;
         public RectTransform m_incommingBox;
-        private string m_appId = "9ded5b30-b6b5-48f0-9eeb-efa8944a324d";
+        private string m_appId = "9ded5b30-b6b5-48f0-9eeb-efa8944a324d"; //Drugi klucz do PhotonApi - Jakub
         private ExitGames.Client.Photon.Chat.AuthenticationValues m_authenticationValues;
         private ChatClient m_chatClient;
         public GameObject m_messagePrefab;
@@ -23,9 +23,13 @@ namespace UI
             ExitGames.Client.Photon.ConnectionProtocol connectProtocol = ExitGames.Client.Photon.ConnectionProtocol.Udp;
             m_chatClient = new ChatClient(this, connectProtocol);
             m_chatClient.ChatRegion = "EU";
+        }
 
+        public void Authenticate(string p_user)
+        {
             m_authenticationValues = new ExitGames.Client.Photon.Chat.AuthenticationValues();
-            m_authenticationValues.UserId = System.Environment.UserName;
+            //m_authenticationValues.UserId = System.Environment.UserName;
+            m_authenticationValues.UserId = p_user;
             m_authenticationValues.AuthType = ExitGames.Client.Photon.Chat.CustomAuthenticationType.None;
             m_chatClient.Connect(m_appId, "0.01", m_authenticationValues);
         }
@@ -59,7 +63,7 @@ namespace UI
             {
                 string l_inputFromTextField = m_messageInput.text;
                 m_messageInput.text = "";
-                m_chatClient.PublishMessage("channelNameHere", l_inputFromTextField);
+                m_chatClient.PublishMessage("Global", l_inputFromTextField);
                 
             }
         }
@@ -85,7 +89,7 @@ namespace UI
 
         public void OnConnected()
         {
-            m_chatClient.Subscribe(new string[] { "channelNameHere", "All" });
+            m_chatClient.Subscribe(new string[] { "Global", "All" });
         }
 
         public void OnChatStateChange(ChatState state)

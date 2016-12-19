@@ -59,7 +59,7 @@ public class Shooting : MonoBehaviour
 
             if (m_FX_Manager != null)
             {
-                m_FX_Manager.GetComponent<PhotonView>().RPC("SniperBulletFX", PhotonTargets.All, Camera.main.transform.position, hitPoint);
+                m_FX_Manager.GetComponent<PhotonView>().RPC("SniperBulletFX", PhotonTargets.All, GameObject.Find("FirstPersonCharacter/spawn").transform.position, hitPoint);
             }
         }
         else
@@ -67,7 +67,7 @@ public class Shooting : MonoBehaviour
             if (m_FX_Manager != null)
             {
                 hitPoint = Camera.main.transform.position + (Camera.main.transform.forward * 100f);
-                m_FX_Manager.GetComponent<PhotonView>().RPC("SniperBulletFX", PhotonTargets.All, Camera.main.transform.position, hitPoint);
+                m_FX_Manager.GetComponent<PhotonView>().RPC("SniperBulletFX", PhotonTargets.All, GameObject.Find("FirstPersonCharacter/spawn").transform.position, hitPoint);
             }
         }
 

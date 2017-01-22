@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Fire
   - map
+  - amphetamine_pill
+  - methamphetamine_pill
+  - ecstasy_pill
+  - LSD_pill
+  - PCP_pill
+  - shroom_pill
+  - Hospital
   layers:
   - Default
   - TransparentFX

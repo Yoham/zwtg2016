@@ -38,8 +38,8 @@ public class NetworkManager : MonoBehaviour {
 		Debug.Log (prefab.name);
 
 		PhotonNetwork.Instantiate(prefab.name, spawnPoint.transform.position, spawnPoint.transform.rotation, 0);
-        m_chat.Authenticate(PhotonNetwork.playerName);
-		PhotonNetwork.player.SetTeam (PunTeams.Team.psycho);
+        m_chat.Authenticate(PhotonNetwork.playerName,PhotonNetwork.player.GetTeam());
+		//PhotonNetwork.player.SetTeam (PunTeams.Team.psycho);
 	}
 
 	void OnGUI()
@@ -63,7 +63,8 @@ public class NetworkManager : MonoBehaviour {
             {
                 standbyCamera.SetActive(false);
                 PhotonNetwork.Instantiate(prefab.name, spawnPoint.transform.position, spawnPoint.transform.rotation, 0);
-                PhotonNetwork.player.SetTeam(PunTeams.Team.psycho);
+                PhotonNetwork.player.SetTeam(PhotonNetwork.player.GetTeam());
+                //m_chat.Authenticate(PhotonNetwork.playerName, PhotonNetwork.player.GetTeam());
             }
         }
     }

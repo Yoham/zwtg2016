@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour
     public InputField m_joinRoomName;
     public InputField m_playerName;
     public ToggleGroup m_toggleGroup;
+    public Toggle m_psycho;
+    public Toggle m_doc;
     public GameObject m_menu;
     public GameObject m_chat;
 
@@ -23,14 +25,23 @@ public class MainMenu : MonoBehaviour
     public void JoinRoom()
     {
         PhotonNetwork.playerName = m_playerName.text;
+        PhotonNetwork.player.SetTeam(getTeam());
         PhotonNetwork.JoinRoom(m_joinRoomName.text);
     }
 
     public void CreateRoom()
     {
         PhotonNetwork.playerName = m_playerName.text;
+        PhotonNetwork.player.SetTeam(getTeam());
         PhotonNetwork.CreateRoom(m_roomName.text, new RoomOptions() { maxPlayers = 10 }, TypedLobby.Default);
     }
+
+    public PunTeams.Team getTeam()
+    {
+
+        return m_psycho.isOn ? PunTeams.Team.psycho : PunTeams.Team.doctor;
+    }
+
 
     public void SwitchGUIState()
     {

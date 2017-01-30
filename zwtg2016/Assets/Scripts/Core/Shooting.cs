@@ -31,48 +31,17 @@ public class Shooting : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Shoting!!");
-
-        Vector3 hitPoint;
-
-        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-        Transform hitTransform = findClosestHitObject(ray, out hitPoint);
-
-        if (hitTransform != null)
+        if (GetComponent<NetworkPlayer>().photonView.isMine)
         {
-
-            Debug.Log("We hit: " + hitTransform.name);
-
-            Health h = hitTransform.GetComponent<Health>();
-
-            while (h == null && hitTransform.parent)
-            {
-                hitTransform = hitTransform.parent;
-                h = hitTransform.GetComponent<Health>();
-            }
-
-            if (h != null)
-            {
-                h.GetComponent<PhotonView>().RPC("TakeDamage", PhotonTargets.AllBuffered, damage);
-            }
-
-
-            if (m_FX_Manager != null)
-            {
-                m_FX_Manager.GetComponent<PhotonView>().RPC("SniperBulletFX", PhotonTargets.All, GameObject.Find("FirstPersonCharacter/spawn").transform.position, hitPoint);
-            }
+            Debug.Log("Shoting!!");
+            int playerId = GetComponent<NetworkPlayer>().photonView.viewID;
+            Vector3 spawn = GetComponent<NetworkPlayer>().transform.Find("FirstPersonCharacter/spawn").transform.position;
+            Quaternion dir = GetComponent<NetworkPlayer>().transform.Find("FirstPersonCharacter/spawn").transform.rotation;
+            float force = GetComponent<NetworkPlayer>().GetComponent<WeaponsSelector>().getWeaponForce();
+            m_FX_Manager.GetComponent<PhotonView>().RPC("ShootBullet", PhotonTargets.All, spawn, playerId, force, dir);
         }
-        else
-        {
-            if (m_FX_Manager != null)
-            {
-                hitPoint = Camera.main.transform.position + (Camera.main.transform.forward * 100f);
-                m_FX_Manager.GetComponent<PhotonView>().RPC("SniperBulletFX", PhotonTargets.All, GameObject.Find("FirstPersonCharacter/spawn").transform.position, hitPoint);
-            }
-        }
-
-
-        cooldown = fireRate;
+            
+          
     }
 
     Transform findClosestHitObject(Ray ray, out Vector3 hitPoint)

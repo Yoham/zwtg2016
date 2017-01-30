@@ -6,6 +6,7 @@ public class BulletControler : MonoBehaviour {
     public ParticleSystem hitWallEfect;
 
     public float duration = 5;
+    public float damage = 20;
 
     private float FIXEDUPDATE_TIME = 0.02f;
     private float VELOCITY;
@@ -32,7 +33,11 @@ public class BulletControler : MonoBehaviour {
         {
             Vector3 spark = Vector3.Reflect(ray.direction, hit.normal);
             float timeToHit = hit.distance / VELOCITY;
-            GameObject.FindObjectOfType<FX_Manager>().GetComponent<PhotonView>().RPC("HitWall", PhotonTargets.All, timeToHit, hit.transform.tag, spark, hit.point);
+            GameObject.FindObjectOfType<FX_Manager>().GetComponent<PhotonView>().RPC("HitWall", PhotonTargets.All, timeToHit, hit.transform.tag, spark, hit.point, damage);
+            if (hit.transform.tag == "psycho")
+            {
+                hit.transform.GetComponent<Health>().GetComponent<PhotonView>().RPC("TakeDamage", PhotonTargets.AllBuffered, damage);
+            }
             Destroy(gameObject);
         }
 

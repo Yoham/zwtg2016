@@ -32,4 +32,6 @@ MonoBehaviour:
   - RequestForPickupTimes
   - TakeDamage
   - SniperBulletFX
+  - HitWall
+  - ShootBullet
   DisableAutoOpenWizard: 1

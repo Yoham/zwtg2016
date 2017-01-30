@@ -5,39 +5,40 @@ public class FX_Manager : MonoBehaviour
 {
 
     public ParticleSystem hitWallEfect;
-
-    public GameObject sniperBullerFXPrefab;
+    
     [PunRPC]
-    void SniperBulletFX(Vector3 startPos, Vector3 endPos)
+    void ShootBullet(Vector3 startPos, int playerID, float force, Quaternion dir)
     {
         Debug.Log("FX");
-        /*
-        GameObject sniperFX = (GameObject)Instantiate(sniperBullerFXPrefab, startPos, Quaternion.LookRotation(endPos - startPos));
+        GameObject bullet = PhotonView.Find(playerID).gameObject.GetComponent<WeaponsSelector>().getBullet();
 
-        LineRenderer lr = sniperFX.transform.Find("LineFX").GetComponent<LineRenderer>();
-        lr.SetPosition(0, startPos);
-        lr.SetPosition(1, endPos);
-        */
-        GameObject pistolBullet = (GameObject)Instantiate(sniperBullerFXPrefab, startPos, Quaternion.LookRotation(endPos - startPos));
-        pistolBullet.GetComponent<Rigidbody>().velocity = pistolBullet.transform.forward * 6;
-
+        GameObject newBullet = (GameObject)Instantiate(bullet, startPos, dir);
+        newBullet.GetComponent<Rigidbody>().velocity = newBullet.transform.forward * force;
 
     }
 
     [PunRPC]
-    public void HitWall(float time, string tag, Vector3 sparkDir, Vector3 sparkSpaw)
+    public void HitWall(float time, string tag, Vector3 sparkDir, Vector3 sparkSpaw, float damage)
     {
-        StartCoroutine(HitOnTime(time, tag, sparkDir, sparkSpaw));
+        StartCoroutine(HitOnTime(time, tag, sparkDir, sparkSpaw, damage));
     }
 
-    IEnumerator HitOnTime(float time, string tag, Vector3 sparkDir, Vector3 sparkSpawn)
+    IEnumerator HitOnTime(float time, string tag, Vector3 sparkDir, Vector3 sparkSpawn, float damage)
     {
         yield return new WaitForSeconds(time);
 
         if (tag == "map")
         {
-            ParticleSystem particle = (ParticleSystem) Instantiate(hitWallEfect, sparkSpawn, Quaternion.LookRotation(sparkDir));
-            //Destroy(gameObject);
+            ParticleSystem particle = (ParticleSystem)Instantiate(hitWallEfect, sparkSpawn, Quaternion.LookRotation(sparkDir));
+
         }
+        /*
+        if (tag == "psycho")
+        {
+            //hit player effect
+        }
+        */
+
+        //Destroy(gameObject);
     }
 }

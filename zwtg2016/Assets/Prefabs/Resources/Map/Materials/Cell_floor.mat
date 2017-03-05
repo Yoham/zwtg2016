@@ -92,6 +92,9 @@ Material:
         name: _GlossyReflections
       second: 1
     - first:
+        name: _Luminosity
+      second: 0.5
+    - first:
         name: _Metallic
       second: 0
     - first:
@@ -104,14 +107,26 @@ Material:
         name: _Parallax
       second: 0.02
     - first:
+        name: _Saturation
+      second: 0.8
+    - first:
         name: _SmoothnessTextureChannel
       second: 0
     - first:
         name: _SpecularHighlights
       second: 1
     - first:
+        name: _Speed
+      second: 2.4
+    - first:
+        name: _Spread
+      second: 3.8
+    - first:
         name: _SrcBlend
       second: 1
+    - first:
+        name: _TimeOffset
+      second: 0
     - first:
         name: _UVSec
       second: 0

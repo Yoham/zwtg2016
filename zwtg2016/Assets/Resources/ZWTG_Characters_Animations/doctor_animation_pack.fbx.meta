@@ -1,0 +1,196 @@
+fileFormatVersion: 2
+guid: d67da31812475294bbb966aa538e0d5d
+timeCreated: 1488556692
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Chest
+    100002: Chest2
+    100004: Chest3
+    100006: Chest4
+    100008: //RootNode
+    100010: Head
+    100012: Head_end
+    100014: Hips
+    100016: LeftAnkle
+    100018: LeftCollar
+    100020: LeftElbow
+    100022: LeftHip
+    100024: LeftKnee
+    100026: LeftShoulder
+    100028: LeftToe
+    100030: LeftToe_end
+    100032: LeftWrist
+    100034: LeftWrist_end
+    100036: Neck
+    100038: RightAnkle
+    100040: RightCollar
+    100042: RightElbow
+    100044: RightHip
+    100046: RightKnee
+    100048: RightShoulder
+    100050: RightToe
+    100052: RightToe_end
+    100054: RightWrist
+    100056: RightWrist_end
+    400000: Chest
+    400002: Chest2
+    400004: Chest3
+    400006: Chest4
+    400008: //RootNode
+    400010: Head
+    400012: Head_end
+    400014: Hips
+    400016: LeftAnkle
+    400018: LeftCollar
+    400020: LeftElbow
+    400022: LeftHip
+    400024: LeftKnee
+    400026: LeftShoulder
+    400028: LeftToe
+    400030: LeftToe_end
+    400032: LeftWrist
+    400034: LeftWrist_end
+    400036: Neck
+    400038: RightAnkle
+    400040: RightCollar
+    400042: RightElbow
+    400044: RightHip
+    400046: RightKnee
+    400048: RightShoulder
+    400050: RightToe
+    400052: RightToe_end
+    400054: RightWrist
+    400056: RightWrist_end
+    7400000: doc_defibrillator_draw
+    7400002: doc_defibrillator_start_defib
+    7400004: doc_defibrillator_middle_defib
+    7400006: doc_defibrillator_end_defib
+    7400008: doc_defibrillator_hide
+    7400010: doc_melee_draw
+    7400012: doc_melee_idle_stand
+    7400014: doc_melee_attack_double
+    7400016: doc_melee_attack_right-to-left
+    7400018: doc_melee_attack_left-to-right
+    7400020: doc_melee_attack_push_all
+    7400022: doc_melee_attack_push_start
+    7400024: doc_melee_attack_push_middle
+    7400026: doc_melee_attack_push_end
+    7400028: doc_melee_attack_push_all_v2
+    7400030: doc_melee_hide
+    7400032: doc_pistol_draw
+    7400034: doc_pistol_shoot
+    7400036: doc_pistol_shoot_v2
+    7400038: doc_pistol_reload
+    7400040: doc_pistol_hide
+    7400042: doc_rifle_draw
+    7400044: doc_rifle_idle
+    7400046: doc_rifle_shoot
+    7400048: doc_rifle_reload
+    7400050: doc_rifle_hide
+    7400052: doctor_animations_pack|Action
+    7400054: doctor_animations_pack|doc_defibrillator_draw
+    7400056: doctor_animations_pack|doc_defibrillator_end_defib
+    7400058: doctor_animations_pack|doc_defibrillator_hide
+    7400060: doctor_animations_pack|doc_defibrillator_middle_defib
+    7400062: doctor_animations_pack|doc_defibrillator_start_defib
+    7400064: doctor_animations_pack|doc_melee_attack_double
+    7400066: doctor_animations_pack|doc_melee_attack_left-to-right
+    7400068: doctor_animations_pack|doc_melee_attack_push_all
+    7400070: doctor_animations_pack|doc_melee_attack_push_all_v2
+    7400072: doctor_animations_pack|doc_melee_attack_push_end
+    7400074: doctor_animations_pack|doc_melee_attack_push_middle
+    7400076: doctor_animations_pack|doc_melee_attack_push_start
+    7400078: doctor_animations_pack|doc_melee_attack_right-to-left
+    7400080: doctor_animations_pack|doc_melee_draw
+    7400082: doctor_animations_pack|doc_melee_hide
+    7400084: doctor_animations_pack|doc_melee_idle_stand
+    7400086: doctor_animations_pack|doc_pistol_draw
+    7400088: doctor_animations_pack|doc_pistol_hide
+    7400090: doctor_animations_pack|doc_pistol_reload
+    7400092: doctor_animations_pack|doc_pistol_shoot
+    7400094: doctor_animations_pack|doc_pistol_shoot_v2
+    7400096: doctor_animations_pack|doc_rifle_draw
+    7400098: doctor_animations_pack|doc_rifle_hide
+    7400100: doctor_animations_pack|doc_rifle_idle
+    7400102: doctor_animations_pack|doc_rifle_reload
+    7400104: doctor_animations_pack|doc_rifle_shoot
+    7400106: doctor_animations_pack|doctdefibrillatordummy
+    7400108: doctor_animations_pack|doctdefibrillatorhidev1
+    7400110: doctor_animations_pack|doctdefibrillatorhidev2
+    7400112: doctor_animations_pack|doctdefibrillatorhidev2.001
+    7400114: doctor_animations_pack|doctdefibrillatorhidev4
+    7400116: doctor_animations_pack|doctmeleeall
+    7400118: doctor_animations_pack|doctmeleeall.001
+    7400120: doctor_animations_pack|doctriflecrouch
+    7400122: doctor_animations_pack|doctrifleshootreload
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

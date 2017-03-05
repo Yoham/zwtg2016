@@ -13,6 +13,7 @@ TagManager:
   - PCP_pill
   - shroom_pill
   - Hospital
+  - Infrastructure
   layers:
   - Default
   - TransparentFX

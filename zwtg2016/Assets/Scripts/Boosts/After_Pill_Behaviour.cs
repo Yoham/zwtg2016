@@ -76,10 +76,23 @@ public class After_Pill_Behaviour : MonoBehaviour {
 
 		myBlur = child.GetComponent<BlurOptimized> ();
 		myBlur.enabled = false;
-	}
 
-    
-	void Update () {
+        setRainbow(false);
+    }
+
+    private void setRainbow(bool on)
+    {
+        Shader shader = on ? Shader.Find("_Shaders/Rainbow") : Shader.Find("Standard");
+
+        GameObject walls = GameObject.Find("default");
+        Material[] materials = walls.GetComponent<Renderer>().sharedMaterials;
+        for (int i = 0; i < materials.Length; ++i)
+        {
+            materials[i].shader = shader;
+        }
+    }
+
+    void Update () {
 
 		// Boosts time effects
 		// 1. amphetamine
@@ -142,7 +155,9 @@ public class After_Pill_Behaviour : MonoBehaviour {
 					audioSource[0].mute = false;
 					audioSource [0].Play ();
 				}
-			}
+
+                setRainbow(false);
+            }
 		} 
 
 		// 4 (5). PCP
@@ -273,8 +288,10 @@ public class After_Pill_Behaviour : MonoBehaviour {
 					audioSource [4].mute = true;
 					audioSource [5].mute = true;
 					audioSource [3].Play ();
-				}
-			}
+
+                    setRainbow(true);
+                }
+            }
 		}
 
 		// 5. PCP - berserker mode
